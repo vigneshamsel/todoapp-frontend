@@ -1,0 +1,32 @@
+<div id="background_image">
+    <div class="signup_container">
+  
+      <div class="signup_box">
+       
+        <div class="login_account_text">
+          Sign in
+        </div>
+        <form [formGroup]="formGroup" class="signup_form" >
+          <div class="textfield">
+            <label class="inputlabel" for="name">Username</label>
+            <input class="inputfield" formControlName="name" type="text">
+          </div>
+          <div class="textfield">
+            <label class="inputlabel" for="password">Password</label>
+            <input class="inputfield" formControlName="password" type="password">
+          </div>
+       
+         <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+        
+        </form>
+      
+        <button class="signin_button" (click)="account_login()">
+          Sign in
+        </button>
+        <div >
+          New here ? <a  class="singup_text"href="/signup">Signup</a>
+        </div>
+      </div>
+    </div>
