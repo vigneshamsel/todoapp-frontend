@@ -3,31 +3,29 @@ name: Deploy to S3
 on:
   push:
     branches:
-      - master  # Trigger on push to main branch
+      - master
 
 jobs:
   deploy:
-    runs-on: self-hosted
+    runs-on: self-hosted  # Ensure this matches the label of your self-hosted runner
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '16'
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
 
-    - name: Install Dependencies
-      run: npm install
 
-    - name: Build Angular Application
-      run: npm run build --prod
 
-    - name: Deploy to S3
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        AWS_REGION: 'us-east-1'
-        S3_BUCKET: 'todoapp.online'
-      run: |
-        aws s3 sync ./dist/todoapp s3://$S3_BUCKET --delete --region $AWS_REGION
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to S3
+        run: |
+          aws s3 sync ./build s3://todoapp.online --delete
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: 'us-east-1'  # Replace with your AWS region
