@@ -9,7 +9,7 @@ import { HttpParams } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = 'http://localhost:8091';
+  private baseUrl = 'https://api.todoapp.online/user/register';
 
   httpclient:HttpClient
 
@@ -21,6 +21,7 @@ export class AuthService {
     console.log(user);
     return this.http.post(`${this.baseUrl}/user/add`, user);
   }
+
 
   login(user :User){
     const headers = new HttpHeaders({
