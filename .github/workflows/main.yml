@@ -37,7 +37,7 @@ jobs:
         run: |
           ls 
           npm install -g @angular/cli
-          npm install
+          npm install  --force
           ng build
 
       - name: Deploy to S3
