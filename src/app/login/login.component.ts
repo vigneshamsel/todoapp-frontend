@@ -33,7 +33,6 @@ export class LoginComponent {
 
   account_login(){
     this.errorMessage='';
-    console.log("come here")
      const name = this.formGroup.get('name')?.value as string;
      const password = this.formGroup.get('password')?.value as string;
      this.auth.login(new User(name,password)).subscribe(
