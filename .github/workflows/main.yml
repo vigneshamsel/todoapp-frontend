@@ -9,14 +9,37 @@ jobs:
   deploy:
     runs-on: awsfront  # Ensure this matches the label of your self-hosted runner
     steps:
-      - name: Checkout code
+      
+
+          
+      # 2. Checkout Repository
+      - name: Checkout Repository
         uses: actions/checkout@v3
+        with:
+          ref: main
+      
+      # 3. Setup Node
+      - name: Setup Node 
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.12.0'
+          
+      # 4. Setup Cache
+      - name: Setup Cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
-      - name: Build
-        run: npm run install
-
-      - name: Build
-        run: npm run build
+      # 5. Build Angular
+      - name: Build Angular Application
+        run: |
+          ls
+          npm install -g @angular/cli
+          npm install
+          ng build
 
       - name: Deploy to S3
         run: |
