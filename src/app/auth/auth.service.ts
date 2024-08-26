@@ -16,6 +16,10 @@ export class AuthService {
   httpclient:HttpClient
 
   constructor(private http: HttpClient) { 
+    let urlnamea:string =window.location.hostname;
+    if(urlnamea.includes('localhost')){
+      this.baseUrl='http://localhost:8754'
+    }
     this.httpclient=http;
   }
 
