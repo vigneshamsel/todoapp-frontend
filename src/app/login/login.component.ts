@@ -35,19 +35,13 @@ export class LoginComponent {
     this.errorMessage='';
      const name = this.formGroup.get('name')?.value as string;
      const password = this.formGroup.get('password')?.value as string;
-     this.auth.login(new User(name,password)).subscribe(
-      response => {
-        console.log('Response:', response);
-    },
-    error => {
-        console.error('Error:', error);
-        // Display user-friendly error messages or take appropriate actions
-    }
-  );
+     this.auth.login(new User(name,password)).subscribe({
+      next: (v) =>  this.rerouteToHomePage(),
+      error: (e) => this.handlerrors(e)
+    });
 }
 
   rerouteToHomePage(){
-
     this.router.navigate(['landingpage'])
   }
 
@@ -56,8 +50,5 @@ export class LoginComponent {
     const errorCode = error?.error?.errorCode || 'UNKNOWN_ERROR';
     this.errorMessage = this.errorCodeService.getErrorMessage(errorCode);
    }
-
-    
-  
 
 }

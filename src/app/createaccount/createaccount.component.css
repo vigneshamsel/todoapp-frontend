@@ -32,7 +32,7 @@
     align-self: center;
     font-weight: 800;
   
-    
+
   }
   
   
@@ -58,8 +58,14 @@
     height: 44px;
     border-radius: 8px;
     margin-top: 5px;
-    border: 1px solid #E7E7E7;
+    border: 2px solid #ced4da;
     padding-left: 15px;
+
+    border-radius: 4px; 
+    padding: 8px 12px; 
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+  
   }
   
   .inputlabel{
@@ -74,8 +80,12 @@
     margin-bottom: 40px;
     border-radius: 8px;
     color: #FFFFFF;
-    background-color: black;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background-color: #28a745; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border:none;
+    border: 0.75px solid #218838; /* Slightly darker border */
+
+    
   
   }
   
@@ -95,15 +105,18 @@
 
   }
   
-  .login_text{
-     text-decoration: none;
-     font-weight: 450;
-     color:#9cb01a;
-     text-align: center; 
-     margin-top: 8px;
-     font-family: 'Outfit', sans-serif;
-     word-spacing: -3px;
+  
 
+  .login_text {
+    color: #218838; 
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+  }
+  
+  .login_text:hover {
+    color: #28a745; /* Brighter green on hover */
+    text-decoration: underline; /* Add underline on hover */
   }
 
   .base_text{

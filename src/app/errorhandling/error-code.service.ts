@@ -7,6 +7,8 @@ export class ErrorCodeService {
   private errorMessages: { [key: string]: string } = {
     "USER_ALREADY_EXISTS": "Username is already taken. Please choose another.",
     "PASSWORD_MISMATCH": "The passwords you entered do not match. Please try again.",
+    "INVALID_PASSWORD": "The passwords you entered is incorrect",
+    "USER_NOT_EXISTS":"Username doesnt exists."
     // Add more error codes and messages as needed
   };
 
