@@ -50,7 +50,7 @@ export class CreateaccountComponent {
     
 
   rerouteToHomePage(){
-    this.router.navigate(['landingpage'])
+    this.router.navigate(['home'])
   }
 
 

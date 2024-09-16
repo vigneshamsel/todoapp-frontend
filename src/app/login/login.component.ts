@@ -42,7 +42,7 @@ export class LoginComponent {
 }
 
   rerouteToHomePage(){
-    this.router.navigate(['landingpage'])
+    this.router.navigate(['home'])
   }
 
 
