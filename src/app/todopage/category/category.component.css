@@ -1,91 +1,143 @@
 .sidebar {
-    width: 250px;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-right: 1px solid #ddd;
-    height: 100vh; /* Full height */
-  }
-  
-  .sidebar h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .sidebar ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .sidebar li {
-    margin-bottom: 10px;
-  }
-  
-  .sidebar li a {
-    color: #333;
-    text-decoration: none;
-    font-size: 16px;
-    font: Lato;
-    padding: 10px;
-    display: block;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .sidebar li a:hover {
-    background-color: #e0e0e0;
-  }
-  
-
-  
-  .sidebar li a.active {
-    background-color: #007bff;
-    color: white;
-  }
-
- 
-  .add-category {
-    cursor: pointer;
-    color: #b0b0b0;
-    font-size: 16px;
-    display: inline-block;
-    padding: 5px 10px; /* Adjust padding as needed */
-    border-radius: 3px;
-    transition: all 0.3s ease;
-    animation: pulse 1.5s infinite cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-    100% { transform: scale(1); }
-  }
-  .add-category:hover {
-    color: #000;
-    background-color: #f0f0f0;
-    cursor: pointer;
-
-  }
-  
-  .add-category:active {
-    transform: translateY(1px); /* Slight downward shift on click */
-  }
-
-.newcategory-input {
-  padding: 8px;
-  border: 1px solid;
-  border-radius: 5px;
-  font-size: 16px;
-  width: 80%; 
-  box-sizing: border-box; 
+  width: 280px;
+  background: linear-gradient(135deg, #eef2f7 0%, #d7e3f1 100%); /* Softer background */
+  padding: 30px;
+  height: 100vh;
+  box-shadow: 4px 0px 20px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.newcategory-input:focus {
-  color: #2f3330;
-  border-color: #4CAF50; 
-  outline: none; 
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #95a5a6;
+  border-radius: 10px;
+}
+
+.app-logo {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 30px;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.25));
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+/* Category container design */
+.category-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: linear-gradient(135deg, #ffffff 0%, #f9fbfd 100%);
+  border-radius: 12px;
+  font-size: 16px;
+  color: #34495e;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.category-container:hover {
+  background-color: #f1f4f8; /* Slightly lighter on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Category name design */
+.category-name {
+  flex: 1;
+  font-weight: 500;
+  margin-right: 10px;
+  color: #2c3e50;
+  transition: color 0.2s ease;
+}
+
+.icons {
+  display: flex;
+  gap: 12px;
+}
+
+.edit-icon, .delete-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: fill 0.2s ease, transform 0.2s ease;
+  fill: #34495e;
+}
+
+.edit-icon:hover, .delete-icon:hover {
+  fill: #1abc9c; /* Cool teal for hover */
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Input for editing category */
+.editedCategoryinput {
+  padding: 12px;
+  border: 1px solid #95a5a6;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #34495e;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Add category button */
+.add-category {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  padding: 14px;
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
+}
+
+.add-category:hover {
+  background-color: #1abc9c; /* Teal on hover */
+  box-shadow: 0 12px 24px rgba(26, 188, 156, 0.4);
+}
+
+/* Input for adding new category */
+.newcategory-input {
+  padding: 12px;
+  border: 1px solid #95a5a6;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #34495e;
+  transition: box-shadow 0.3s ease;
+}
+
+.newcategory-input:focus, .editedCategoryinput:focus {
+  border-color: #3498db;
+  outline: none;
+  width: 90%;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
 }
 
 .newcategory-input::placeholder {
-  color: #999;
+  color: #7f8c8d;
   font-style: italic;
 }

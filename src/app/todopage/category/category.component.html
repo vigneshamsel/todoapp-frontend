@@ -1,7 +1,28 @@
 <div class="sidebar">
+
+    <img src="/assets/images/todologoos.png" alt="" class="app-logo">
+
+
+
     <ul>
-      <li *ngFor="let category of categories" (click)="selectCategory(category)">
-        <a href="#">{{ category.name }}</a>
+      <li *ngFor="let category of categories; let i = index" >
+
+        <input  *ngIf="editingIndex === i" class="editedCategoryinput"
+        auto-Focus
+        [(ngModel)]="editedCategoryName"
+        (keydown.enter)="editCategory(category)"
+        (blur)="canceleditCategory()"
+        autofocus
+         />
+        
+        <div class="category-container" *ngIf="editingIndex != i"   (mouseover)="onHover(i)" (mouseleave)="onHover(null)" >
+          <div class="category-name">{{ category.name }}</div>
+           <div class="icons" *ngIf="hoveredIndex === i">
+            <img src="/assets/images/pen.png" alt="edit" class="edit-icon" (click)="startEditing(i, category)">
+            <img src="/assets/images/delete.png" alt="Delete" class="delete-icon"  (click)="deleteCategory(category)">
+        </div>
+      </div>
+
       </li>
       <li *ngIf="!isAddingCategory" (click)="showNewCategoryInput()" class="add-category" >
        + New Category

@@ -17,12 +17,22 @@ import { AutoFocusDirective } from '../../customdirective/auto-focus.directive';
   styleUrl: './category.component.css'
 })
 export class CategoryComponent {
-  @ViewChild('categoryInput') categoryInput?: ElementRef;
 
+  hoveredIndex: number | null = null;
+  
 
+  onHover(index: number | null) {
+    this.hoveredIndex = index;
+  }
   categories: Category[] = [];
   newCategoryName = '';
   isAddingCategory = false;
+  showIcons = false;
+  editingIndex=-1;
+  editedCategoryName='';
+
+
+
   
   private categoryService: CategoryService;
 
@@ -48,11 +58,7 @@ export class CategoryComponent {
 
   showNewCategoryInput() {
     this.isAddingCategory = true;
-    if (this.categoryInput) {
-      this.categoryInput.nativeElement.focus();
-    } else {
-      console.warn('categoryInput not found');
-    }
+ 
     }
 
   addCategory() {
@@ -75,6 +81,45 @@ export class CategoryComponent {
   }
 
 
-  selectCategory(category: Category): void {
+  startEditing(index: number, category: Category): void {
+    this.editingIndex = index;
+    this.editedCategoryName=category.name;
   }
-}
+
+  editCategory(category:Category): void {
+    const updatedCategoryName= this.editedCategoryName.trim();
+    if (updatedCategoryName) {
+      category.name=updatedCategoryName;
+      this.categoryService.updateCategory(category).subscribe(
+        () => {
+          this.editingIndex = -1; 
+        },
+        (error) => {
+          console.error('Error updating category', error);
+        }
+      );
+    }
+  }
+
+  canceleditCategory(){
+    this.editedCategoryName = '';
+    this.editingIndex = -1;
+
+  }
+
+
+  deleteCategory(category: Category): void {
+      this.categoryService.deleteCategory(category).subscribe(
+        () => {
+          this.categories = this.categories.filter(c => c.id !== category.id);
+        },
+        (error) => {
+          console.error('Error deleting category', error);
+        }
+      );
+    }
+  }
+
+
+ 
+

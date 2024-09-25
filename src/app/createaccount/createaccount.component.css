@@ -1,5 +1,5 @@
 #background_image{
-    background-image: url('/assets/images/dummy.jpg');
+    background-image: url('/assets/images/gradients.png');
     height: 100vh; 
     background-repeat: no-repeat;
     background-size: cover;
@@ -8,8 +8,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
   }
   
+
   .signup_box{
     background-color: #FFFFFF;
     width: 488px;
@@ -31,7 +33,7 @@
     font-size: 24px;
     align-self: center;
     font-weight: 800;
-  
+     
 
   }
   
@@ -91,7 +93,9 @@
   
   .toplogo{
     position: absolute;
-    top: -55px;
+    top: -140px;
+
+
   }
   
   

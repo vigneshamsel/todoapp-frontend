@@ -1,0 +1,29 @@
+
+
+.container {
+    display: flex;
+    align-items: flex-start; /* Align the components to the top */
+    justify-content: flex-start;
+    width: 100%;
+    height: 100vh; /* Full height of the view */
+    padding: 0 20px; /* Add some padding around the edges */
+    box-sizing: border-box; 
+  }
+
+
+  .category {
+    flex: 0 1 250px;
+    margin-left: -20px;
+    height: 100vh;
+
+  }
+  
+  .task {
+    flex: 1;
+    margin-top: 30px;
+    margin-right: 60px; /* Space between category and task component */
+    margin-left: 60px; /* Space between category and task component */
+
+    /* The task component takes up remaining space */
+  }
+  
