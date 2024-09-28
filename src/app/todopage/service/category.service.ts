@@ -10,8 +10,12 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class CategoryService {
   private apiUrl = `${environment.apiUrl}/api/categories`;
+
   private categoriesSubject = new BehaviorSubject<Category[]>([]);
   categories$: Observable<Category[]> = this.categoriesSubject.asObservable();
+
+  private selectedCategorySubject = new BehaviorSubject<Category | null>(null);
+  selectedCategory$= this.selectedCategorySubject.asObservable();
 
   private httpclient;
 
@@ -55,6 +59,8 @@ constructor(private http_client: HttpClient) {
       tap(categories=> this.categoriesSubject.next(categories)));
 }
 
-
+updateSelectedCategory(category: Category) {
+  this.selectedCategorySubject.next(category);
+}
 
 }

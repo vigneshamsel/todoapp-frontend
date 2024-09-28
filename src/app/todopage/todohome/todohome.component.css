@@ -1,29 +1,73 @@
-
-
 .container {
-    display: flex;
-    align-items: flex-start; /* Align the components to the top */
-    justify-content: flex-start;
-    width: 100%;
-    height: 100vh; /* Full height of the view */
-    padding: 0 20px; /* Add some padding around the edges */
-    box-sizing: border-box; 
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100vh;
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: relative; 
+}
+
+.category-menu {
+  flex: 0 1 250px;
+  margin-left: -20px;
+  height: 100vh;
+}
+
+
+
+.menu-toggle {
+  display: none;
+}
+
+.task {
+  flex: 1;
+  margin-top: 30px;
+  margin-right: 60px;
+  margin-left: 60px;
+}
+
+
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
   }
 
+  .category-menu {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    width: 250px;
+    height: 100vh;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+  }
+
+  .category-menu.active {
+    transform: translateX(0);
+  }
 
   .category {
-    flex: 0 1 250px;
-    margin-left: -20px;
-    height: 100vh;
-
+    display: none;
   }
-  
+
   .task {
-    flex: 1;
-    margin-top: 30px;
-    margin-right: 60px; /* Space between category and task component */
-    margin-left: 60px; /* Space between category and task component */
-
-    /* The task component takes up remaining space */
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
-  
+}

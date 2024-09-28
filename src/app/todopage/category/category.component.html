@@ -7,20 +7,19 @@
     <ul>
       <li *ngFor="let category of categories; let i = index" >
 
-        <input  *ngIf="editingIndex === i" class="editedCategoryinput"
+        <input  *ngIf="editingIndex === i" 
+        class="editedCategoryinput"
         auto-Focus
         [(ngModel)]="editedCategoryName"
         (keydown.enter)="editCategory(category)"
-        (blur)="canceleditCategory()"
-        autofocus
-         />
+        (blur)="canceleditCategory()" />
         
-        <div class="category-container" *ngIf="editingIndex != i"   (mouseover)="onHover(i)" (mouseleave)="onHover(null)" >
+        <div class="category-container" *ngIf="editingIndex != i"   (mouseover)="onHover(i)" (mouseleave)="onHover(null)" (click)="selectCategory(category)" >
           <div class="category-name">{{ category.name }}</div>
            <div class="icons" *ngIf="hoveredIndex === i">
             <img src="/assets/images/pen.png" alt="edit" class="edit-icon" (click)="startEditing(i, category)">
             <img src="/assets/images/delete.png" alt="Delete" class="delete-icon"  (click)="deleteCategory(category)">
-        </div>
+           </div>
       </div>
 
       </li>
@@ -37,7 +36,6 @@
         (keydown.enter)="addCategory()"
         (blur)="cancelNewCategory()"
         placeholder="New category name"
-        autofocus
       />
       </li>
     </ul>

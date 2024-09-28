@@ -1,7 +1,13 @@
+
+
 <div class="container">
+  <button class="menu-toggle" (click)="toggleMenu()">&#9776;</button> 
+  <div class="category-menu" [class.active]="isMenuActive">
     <app-category class="category"></app-category>
-    <app-task class="task"></app-task>
   </div>
+  <app-task class="task"></app-task>
+</div>
+
   
 
 

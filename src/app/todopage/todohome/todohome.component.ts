@@ -10,4 +10,10 @@ import { TaskComponent } from '../task/task.component';
 })
 export class TodohomeComponent {
 
+  isMenuActive = false;
+
+  toggleMenu() {
+    this.isMenuActive = !this.isMenuActive;
+  }
+
 }

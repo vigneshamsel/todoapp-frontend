@@ -89,9 +89,9 @@ export class CategoryComponent {
   editCategory(category:Category): void {
     const updatedCategoryName= this.editedCategoryName.trim();
     if (updatedCategoryName) {
-      category.name=updatedCategoryName;
       this.categoryService.updateCategory(category).subscribe(
         () => {
+          category.name=updatedCategoryName;
           this.editingIndex = -1; 
         },
         (error) => {
@@ -107,6 +107,10 @@ export class CategoryComponent {
 
   }
 
+  selectCategory(category: Category){
+    this.categoryService.updateSelectedCategory(category);
+  }
+
 
   deleteCategory(category: Category): void {
       this.categoryService.deleteCategory(category).subscribe(
@@ -118,7 +122,7 @@ export class CategoryComponent {
         }
       );
     }
-  }
+}
 
 
  
