@@ -77,10 +77,10 @@
     box-shadow: 0 4px 4px 0 rgba(29, 5, 121, 0.25);
     cursor: pointer;
 
-    border: 0.5px solid #301bc9; 
+    border: 0.5px solid #4d39e2; 
 
     border-radius: 8px;
-    background: #6c5ce7;
+    background: #887af7;
     color: white;
     cursor: pointer;
   
@@ -105,7 +105,7 @@
 
 
   .singup_text {
-    color: #6c5ce7;
+    color: #8e81f3;
     text-decoration: none;
     font-weight: bold;
   }

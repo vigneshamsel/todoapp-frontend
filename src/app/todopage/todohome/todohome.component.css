@@ -30,15 +30,15 @@
 .logout-button {
   color: white;
   position: absolute;
-  top: -1px;          /* Position it at the top */
-  right:-20px;       /* Adjust position to align better */
-  width: 30px;       /* Set width for a circular shape */
-  height: 30px;      /* Set height for a circular shape */
-  background-color: #ff5c5c; /* Softer, lighter red */
-  border: none;      /* No border */
-  border-radius: 50%; /* Makes the button circular */
-  cursor: pointer;   /* Change cursor on hover */
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); /* Light shadow */
+  top: -1px;        
+  right:-40px;       
+  width: 30px;       
+  height: 30px;     
+  background-color: #eb9191; 
+  border: none;     
+  border-radius: 50%; 
+  cursor: pointer;   
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); 
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
