@@ -19,7 +19,7 @@ export class CategoryService {
 
   private httpclient;
 
-constructor(private http_client: HttpClient) {
+ constructor(private http_client: HttpClient) {
     this.httpclient=http_client;
  }  
 
@@ -48,7 +48,6 @@ constructor(private http_client: HttpClient) {
         category=> category.id === updatedCategory.id?updatedCategory:category
        );
        this.categoriesSubject.next(updatedCategories);
-
     })
   )
  }

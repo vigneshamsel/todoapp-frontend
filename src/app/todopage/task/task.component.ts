@@ -10,6 +10,7 @@ import { TaskService } from '../service/task.service';
 import { Task } from '../model/task';
 import { Category } from '../model/category.model';
 import { AutoFocusDirective } from '../../customdirective/auto-focus.directive';
+import { CategoryColorService } from '../service/category-color.service';
 
 
 
@@ -26,6 +27,7 @@ import { AutoFocusDirective } from '../../customdirective/auto-focus.directive';
 export class TaskComponent {
 
   readonly GENERAL_CATEGORY = 'General';
+
 
 
   // To store all tasks
@@ -58,9 +60,10 @@ export class TaskComponent {
 
 
 
-  constructor( private task_service: TaskService,private category_service: CategoryService) {
+  constructor( private task_service: TaskService,private category_service: CategoryService,private categoryColorService:CategoryColorService) {
     this.taskService=task_service;
     this.categoryService=category_service;
+    this.categoryColorService
   }
 
 
@@ -92,7 +95,8 @@ export class TaskComponent {
     } else {
       this.filteredTasks = this.tasks.filter(task => task.categoryname === this.selectedCategory?.name);
     }
-    console.log(this.filteredTasks);
+    this.filteredTasks.sort((a, b) => Number(a.completed) - Number(b.completed));
+    
   }
   
   
@@ -117,7 +121,8 @@ export class TaskComponent {
 
     // Since API Returns only id of task category
     mapTaskAndCategory(task:Task):Task{
-      const category = this.categories.find(categories=> categories.id=== task.categoryId);
+      const category_Id: number = this.selectedCategory?.id ?? task.categoryId ?? -1;
+      const category = this.categories.find(categories=> categories.id=== category_Id);
       return{...task,categoryname:category?category.name:this.GENERAL_CATEGORY}
     }
 
@@ -125,6 +130,9 @@ export class TaskComponent {
 
   addTask():void{
     const taskTitle=this.tasktoBeAdded.title.trim();
+    if(!this.getSelectedStatus()){
+      this.tasktoBeAdded.categoryId=this.selectedCategory?.id;
+    }
     if(taskTitle){
       this.taskService.addTask(this.tasktoBeAdded).subscribe((task)=>{
         this.tasks.push(this.mapTaskAndCategory(task));
@@ -156,6 +164,17 @@ export class TaskComponent {
     )}
   }
 
+// TODO: Need to make 
+
+  changeStatus(task: Task){
+
+
+    this.taskService.updateTask(task).subscribe(()=>{
+        // TODO: Need to make handling
+    });
+  }
+
+
 
 
   deleteTask(task : Task){
@@ -165,6 +184,15 @@ export class TaskComponent {
 
     })
 
+  }
+
+  getCategoryColor(task: Task): string {
+    const category_id = task.categoryId !== undefined ? task.categoryId : 0;
+    return this.categoryColorService.getColorForCategory(category_id);
+  }
+
+  getSelectedStatus():boolean{
+   return  this.selectedCategory==undefined||this.selectedCategory.name== this.GENERAL_CATEGORY;
   }
   
 }

@@ -6,6 +6,7 @@ import { HttpParams } from '@angular/common/http';
 import { jwtDecode } from 'jwt-decode';
 import { tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 export const TOKEN_NAME: string = 'jwt_token';
 
@@ -16,15 +17,17 @@ export class AuthService {
   
   private baseUrl = 'https://api.todoapp.online';
   httpclient:HttpClient
+  private router:Router;
 
 
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient,private _router: Router) { 
     let urlnamea:string =window.location.hostname;
     if(urlnamea.includes('localhost')){
       this.baseUrl='http://localhost:8754'
     }
     this.httpclient=http;
+    this.router=_router;
   }
 
   getToken(): string |null {
@@ -34,6 +37,10 @@ export class AuthService {
   setToken(token: string): void {
     console.log("New token set"+ token);
     localStorage.setItem(TOKEN_NAME, token);
+  }
+
+  removeToken(): void {
+    localStorage.removeItem(TOKEN_NAME);
   }
 
   getTokenExpirationDate(token: string): Date |null {
@@ -78,6 +85,8 @@ export class AuthService {
       })
 
     );
+
+   
   }
 
   getUserName(): Observable<{ user: string}> {
@@ -102,5 +111,11 @@ export class AuthService {
         })
   
       );      
+  }
+      
+  logout(){
+    console.log('whyda');
+    this.removeToken();
+    this.router.navigate(['/login']); 
   }
 }

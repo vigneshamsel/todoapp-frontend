@@ -1,29 +1,70 @@
 <div class="task-section">
-  <h2 class="heading">All Tasks</h2>
+
+  <ng-container *ngIf="getSelectedStatus(); else elseBlock">
+    <h2 class="heading">All Tasks</h2>
+  </ng-container>
+  
+  <ng-template #elseBlock>
+    <h2 class="heading">{{this.selectedCategory?.name}}</h2>
+  </ng-template>
+
 
   <div class="add-task-section">
-    <input type="text" placeholder="New Task" [(ngModel)]="tasktoBeAdded.title" class="new-task-input" (keydown.enter)="addTask()" />
-    <select [(ngModel)]="tasktoBeAdded.categoryId" class="task-category-select">
-      <option class="task-category-select" *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+    <input
+      type="text"
+      placeholder="New Task"
+      [(ngModel)]="tasktoBeAdded.title"
+      class="new-task-input"
+      (keydown.enter)="addTask()"
+    />
+
+    <ng-container *ngIf="getSelectedStatus()">
+
+    <select  [(ngModel)]="tasktoBeAdded.categoryId" class="task-category-select">
+      <option
+        class="task-category-select"
+        *ngFor="let category of categories"
+        [value]="category.id">
+        {{category.name}}
+      </option>
     </select>
+  </ng-container>
+
   </div>
 
   <ul class="task-list">
-    <li *ngFor="let task of filteredTasks; let i= index" class="task-item" >
-      <ng-container *ngIf="editIndex === i">
+    <li *ngFor="let task of filteredTasks; let i= index" class="task-item">
 
-      <input   auto-Focus   class="edit-task-input"  
-        [(ngModel)]="editTask.title"  (keydown.enter)="editTaskName(task)"  (blur)="canceleditTask()"/>
+      <!--Edit task-->
+      <ng-container *ngIf="editIndex === i">
+        <input
+          auto-Focus
+          class="edit-task-input"
+          [(ngModel)]="editTask.title"
+          (keydown.enter)="editTaskName(task)"
+          (blur)="canceleditTask()"
+        />
       </ng-container>
-      
-    <ng-container *ngIf="editIndex !== i">
-      <input  type="checkbox" [(ngModel)]="task.completed" class="task-completed-checkbox"/>
-      <span [ngClass]="{ 'checkmark': task.completed }">{{ task.title }}</span>
-      <span class="task-tag">{{ task.categoryname }}</span>
-      <div class="button-group">
-      <button class="edit-btn" (click)="startEditing(i,task)" >Edit</button>
-      <button class="delete-btn" (click)="deleteTask(task)">Delete </button>
-      </div>
+
+      <ng-container *ngIf="editIndex !== i">
+        <input
+          type="checkbox"
+          [(ngModel)]="task.completed"
+          class="task-completed-checkbox"
+          (change)="changeStatus(task)"
+        />
+
+        <span
+          [ngClass]="{ 'checkmark': task.completed }"
+          >{{ task.title }}</span
+        >
+        <span  *ngIf="getSelectedStatus()" class="task-category" [style.background-color]="getCategoryColor(task)">{{ task.categoryname }}</span>
+
+        <div class="button-group">
+          <button class="edit-btn" (click)="startEditing(i,task)">Edit</button>
+          <button class="delete-btn" (click)="deleteTask(task)">Delete</button>
+        </div>
+
       </ng-container>
     </li>
   </ul>

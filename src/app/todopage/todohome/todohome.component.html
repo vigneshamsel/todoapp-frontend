@@ -5,7 +5,10 @@
   <div class="category-menu" [class.active]="isMenuActive">
     <app-category class="category"></app-category>
   </div>
-  <app-task class="task"></app-task>
+  <div class="task">
+    <app-task></app-task>
+    <button class="logout-button" (click)="logout()">LG</button>
+  </div>
 </div>
 
   

@@ -1,6 +1,6 @@
 .sidebar {
   width: 280px;
-  background: linear-gradient(135deg, #eef2f7 0%, #d7e3f1 100%); /* Softer background */
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
   padding: 30px;
   height: 100vh;
   box-shadow: 4px 0px 20px rgba(0, 0, 0, 0.1);
@@ -26,6 +26,10 @@
   height: 150px;
   margin-bottom: 30px;
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.25));
+  background-color: transparent;
+  opacity: 0.8;
+  
+
 }
 
 .sidebar ul {
@@ -100,20 +104,27 @@
   margin-bottom: 30px;
   text-align: center;
   padding: 14px;
-  background-color: #3498db;
+  background-color: #7aadff; /* Lighter blue to match the sidebar */
   color: #ffffff;
   border: none;
   border-radius: 12px;
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  transition: box-shadow 0.3s ease, background-color 0.3s ease;
-  box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(122, 173, 255, 0.3);
 }
 
 .add-category:hover {
-  background-color: #1abc9c; 
-  box-shadow: 0 12px 24px rgba(26, 188, 156, 0.4);
+  background-color: #a8e6cf; /* Light green from the app's color scheme */
+  color: #333333; /* Darker text for contrast on light background */
+  box-shadow: 0 12px 24px rgba(168, 230, 207, 0.4);
+  transform: translateY(-3px);
+}
+
+.add-category:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 8px rgba(168, 230, 207, 0.3);
 }
 
 .newcategory-input {

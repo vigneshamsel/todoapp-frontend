@@ -18,6 +18,17 @@
   margin-left: 20px;
 }
 
+@media (max-width: 768px) {
+  
+  .heading {
+    margin-left: 40%;
+    font-size: 18px;
+    margin-top: -5px;
+    align-items: center;
+  }
+}
+
+
 
 /************************************************************************************************************
 /********************************. ADD TASK SECTION *************************************************
@@ -102,33 +113,29 @@
   box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.08); 
 }
 
-.task-category-select{
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-  color: #ffffff;
-  box-shadow: 0 4px 15px rgba(118, 75, 162, 0.6);
-  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+.task-category-select {
+  background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 100%);
+  color: #333333;
+  box-shadow: 0 4px 15px rgba(168, 230, 207, 0.5);
+  transition: all 0.3s ease;
   cursor: pointer;
 }
 
-
 .task-category-select:hover {
-  background: linear-gradient(135deg, #9f7aea 0%, #d53f8c 100%); 
-  transform: translateY(-3px); 
-  box-shadow: 0 6px 20px rgba(213, 63, 140, 0.7); 
+  background: linear-gradient(135deg, #88d8b0 0%, #ff8b94 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 139, 148, 0.7);
 }
 
 .task-category-select:focus {
-  outline: none; 
-  background: linear-gradient(135deg, #7f5af0 0%, #ff00c3 100%); 
-  box-shadow: 0 0 0 4px rgba(127, 90, 240, 0.5);
+  outline: none;
+  background: linear-gradient(135deg, #a8d8ea 0%, #f2b5d4 100%);
+  box-shadow: 0 0 0 4px rgba(168, 216, 234, 0.5);
 }
 
 .task-category-select::placeholder {
-  color: rgba(255, 255, 255, 0.8); 
+  color: rgba(51, 51, 51, 0.6);
 }
-
-
-
 
 task-category-select {
   background-color: #ffffff; 
@@ -161,94 +168,18 @@ task-category-select:hover {
   padding-right: 20px;
   padding-left: 20px;
   margin: 0;
-  max-height: 60vh;
-  overflow-y: auto;
-  border-color: #111827;
-}
+  max-height: 65vh;
 
-/* Scrollbar styling */
-.task-list::-webkit-scrollbar {
-  width: 5px; /* Slightly wider for better visibility */
-}
-
-.task-list::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #eeeff0 0%, #0f0e11 100%); /* Cool gradient */
-  border-radius: 3px;
 }
 
 .task-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%); /* Subtle background gradient */
   padding: 20px;
   gap: 25px;
   margin-bottom: 20px;
-  border-radius: 12px;
-  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.05); /* Soft shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex: 0 1 auto; 
-}
-
-input[type="checkbox"] {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border: 1px solid #ccc;
-  border-radius: 0;
-  background-color: #fff;
-  cursor: pointer;
-  appearance: none; /* To remove the default browser styling */
-}
-/* Base styles for the checkbox input */
-input[type="checkbox"] {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #ccc; /* Border color */
-  border-radius: 5px; /* Rounded corners */
-  background-color: #fff; /* Background color */
-  cursor: pointer;
-  appearance: none; /* Remove default browser styling */
-  position: relative; /* For positioning the checkmark */
-  transition: border-color 0.3s ease; /* Smooth border color transition */
-}
-
-/* Checkbox checked styles */
-input[type="checkbox"]:checked {
-  background-color: #007bff; /* Background color when checked */
-  border-color: #0056b3; /* Darker border when checked */
-}
-
-/* Checkmark styles */
-input[type="checkbox"]:checked::after {
-  content: "";
-  position: absolute;
-  top: 3px; /* Adjust positioning */
-  left: 7px; /* Adjust positioning */
-  width: 6px; /* Width of the checkmark */
-  height: 12px; /* Height of the checkmark */
-  border: solid white; /* Checkmark color */
-  border-width: 0 2px 2px 0; /* Creating the checkmark shape */
-  transform: rotate(45deg); /* Rotate to form a checkmark */
-  transition: transform 0.2s ease-in-out; /* Smooth transition */
-}
-
-/* Add hover effect */
-input[type="checkbox"]:hover {
-  border-color: #007bff; /* Change border color on hover */
-}
-
-/* Focus styles for accessibility */
-input[type="checkbox"]:focus {
-  outline: none; /* Remove default focus outline */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a glow effect */
-}
-
-/* Hover effect on task items */
-.task-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12); /* Slight shadow increase */
+  
 }
 
 .task-details {
@@ -262,46 +193,27 @@ input[type="checkbox"]:focus {
 
 .edit-task-input{
   padding: 15px;
-  border: none;
-  border-radius: 12px;
   font-size: 16px;
-  color: #111827;
-  background-color: #f9fafb;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
- .edit-task-input:focus {
-  border-color: #3498db;
-  outline: none;
-  width: 90%;
-  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+.task-completed-checkbox {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  flex-shrink: 0;
 }
 
-.completed {
-  text-decoration: line-through;
-  color: #9ca3af;
-}
 
-.task-tag {
+
+
+.task-category {
   padding: 6px 18px;
   border-radius: 15px;
   font-size: 14px;
   margin-left: 20px;
   font-weight: 600;
-  background-color: #34d399;
-  color: #ffffff;
-  transition: background-color 0.3s ease, transform 0.3s ease; 
 }
 
-.task-tag:hover {
-  background-color: #22c55e; 
-  transform: scale(1.05); 
-}
-
-.task-tag.groceries {
-  background-color: #fef3c7;
-  color: #b45309;
-}
 
 
 .button-group {
@@ -313,68 +225,50 @@ input[type="checkbox"]:focus {
 .edit-btn, .delete-btn {
   font-size: 12px;
   padding: 5px 8px;
-}
-
-.edit-btn, .delete-btn {
-  background: none;
-  border: none;
-  color: #3b82f6;
-  cursor: pointer;
   font-size: 14px;
   padding: 5px 10px;
   padding: 5px 8px; 
-
-  transition: color 0.3s, transform 0.3s;
 }
 
-.edit-btn:hover, .delete-btn:hover {
-  color: #2563eb;
-  transform: scale(1.1);
-}
 
 
 
 
 
 @media (max-width: 768px) {
-  
-  .heading {
-    margin-left: 40%;
-    font-size: 18px;
-    margin-top: -5px;
-    align-items: center;
 
-  }
-
-
-
-
-
-  /*To disable to transform , since it will be ugly in mobiles*/
 
   .task-item:hover, .add-task-section:hover, .task-category-select:hover , .edit-btn:hover, .delete-btn:hover{
     transform: none; 
   }
 
-
-
   .task-list {
     padding-left: 10px;
     padding-right: 10px;
+    max-height: 70vh;
+
   }
 
   .task-item {
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     gap: 15px;
   }
 
   .task-details {
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
   }
 
-  .task-tag {
+  .task-completed-checkbox {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    flex-shrink: 0;
+  }
+
+  .task-category {
     font-size: 12px;
     padding: 4px 12px;
     margin-left: 10px;
@@ -390,30 +284,148 @@ input[type="checkbox"]:focus {
     padding: 4px 6px;
   }
 
-  .sidebar {
-    width: 100%;
-    height: auto;
-    padding: 20px;
-    box-shadow: none;
-  }
-
-  .category-container {
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  .add-category {
-    font-size: 14px;
-    padding: 12px;
-  }
-
-  .newcategory-input, .editedCategoryinput {
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  .app-logo {
-    width: 120px;
-    height: 120px;
-  }
 }
+
+
+
+/**Appearance**/
+
+.task-list {
+  overflow-y: auto;
+  border-color: #111827;
+}
+
+.task-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.task-list::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #eeeff0 0%, #0f0e11 100%);
+  border-radius: 3px;
+}
+
+.task-item {
+  background: linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%); 
+  border-radius: 12px;
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.05); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 0 1 auto; 
+}
+
+
+
+
+
+.task-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12); 
+}
+
+.task-completed-checkbox {
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  appearance: none;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 2px solid #a8e6cf; /* Light green border matching app palette */
+
+}
+
+.task-completed-checkbox:focus {
+  outline: none;
+  border-color: #7aadff; /* Light blue from sidebar */
+  box-shadow: 0 0 5px rgba(122, 173, 255, 0.5);
+}
+
+.task-completed-checkbox:checked {
+  background-color: #6fe2b8; /* Light green from app palette */
+  border-color: #2e9f75;
+}
+
+.task-completed-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.task-completed-checkbox:hover {
+  border-color: #ff8b94; /* Light pink from app palette */
+}
+
+.task-completed-checkbox:active {
+  transform: scale(0.95);
+}
+
+
+
+.edit-task-input{
+  border: none;
+  border-radius: 12px;
+  color: #111827;
+  background-color: #f9fafb;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+ .edit-task-input:focus {
+  border-color: #3498db;
+  outline: none;
+  width: 90%;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+}
+
+.checkmark {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+
+
+.task-category {
+  background-color: #34d399;
+  color: #ffffff;
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.task-category:hover {
+  background-color: #22c55e; 
+  transform: scale(1.05); 
+}
+
+
+.edit-btn, .delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.edit-btn {
+  color: #4ad84a; /* Pastel Green */
+}
+
+.delete-btn {
+  color: #f47d89; /* Light Coral Pink */
+}
+
+.edit-btn:hover {
+  color: #38a638; /* Darker Pastel Green */
+  transform: scale(1.1);
+}
+
+.delete-btn:hover {
+  color: #dd293e; /* Darker Coral Pink */
+  transform: scale(1.1);
+}
+
+
+
+
+

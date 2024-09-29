@@ -15,8 +15,6 @@
   height: 100vh;
 }
 
-
-
 .menu-toggle {
   display: none;
 }
@@ -26,7 +24,32 @@
   margin-top: 30px;
   margin-right: 60px;
   margin-left: 60px;
+  position: relative; /* Logout button will be positioned relative to this */
 }
+
+.logout-button {
+  color: white;
+  position: absolute;
+  top: -1px;          /* Position it at the top */
+  right:-20px;       /* Adjust position to align better */
+  width: 30px;       /* Set width for a circular shape */
+  height: 30px;      /* Set height for a circular shape */
+  background-color: #ff5c5c; /* Softer, lighter red */
+  border: none;      /* No border */
+  border-radius: 50%; /* Makes the button circular */
+  cursor: pointer;   /* Change cursor on hover */
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); /* Light shadow */
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.logout-button:hover {
+  background-color: #ff8080; /* Soft hover color */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow on hover */
+}
+
+
+
+
 
 
 
@@ -69,5 +92,11 @@
     margin-left: 0;
     margin-right: 0;
     width: 100%;
+    position: relative;
+  }
+
+  .logout-button {
+    top: 10px;
+    right: 10px;
   }
 }
