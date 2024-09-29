@@ -30,10 +30,7 @@
 
 
 
-/************************************************************************************************************
-/********************************. ADD TASK SECTION *************************************************
-/************************************************************************************************************
-
+ /*ADD TASK SECTION*/
 /* Layout */
 
 .add-task-section {
@@ -154,15 +151,7 @@ task-category-select:hover {
   color: white; 
 }
 
-
-
-
-
-
-/************************************************************************************************************/
-/******************************** Task List *************************************************/
-/************************************************************************************************************/
-
+/*Task List*/
 
 .task-list {
   padding-right: 20px;
@@ -202,10 +191,6 @@ task-category-select:hover {
   border: 2px solid #ccc;
   flex-shrink: 0;
 }
-
-
-
-
 .task-category {
   padding: 6px 18px;
   border-radius: 15px;
@@ -213,8 +198,6 @@ task-category-select:hover {
   margin-left: 20px;
   font-weight: 600;
 }
-
-
 
 .button-group {
   display: flex;
@@ -230,18 +213,11 @@ task-category-select:hover {
   padding: 5px 8px; 
 }
 
-
-
-
-
-
 @media (max-width: 768px) {
-
 
   .task-item:hover, .add-task-section:hover, .task-category-select:hover , .edit-btn:hover, .delete-btn:hover{
     transform: none; 
   }
-
   .task-list {
     padding-left: 10px;
     padding-right: 10px;
@@ -285,8 +261,6 @@ task-category-select:hover {
   }
 
 }
-
-
 
 /**Appearance**/
 
