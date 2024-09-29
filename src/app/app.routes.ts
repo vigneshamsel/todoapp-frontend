@@ -13,10 +13,9 @@ export const routes: Routes = [
     { path: '', component: HomemarketsiteComponent},
     { path: 'signup', component:CreateaccountComponent },
     { path: 'login', component: LoginComponent },
+    { path: 'marketing', component: HomemarketsiteComponent},
     { path: 'home', component:TodohomeComponent  , canActivate:[AuthGuard]},
-
     { path: 'landingpage', component: CategoryComponent , canActivate:[AuthGuard]},
-
 
 
 ];
