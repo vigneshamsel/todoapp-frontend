@@ -1,0 +1,204 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, #ffddd2, #bde0fe); /* Soft pastel background gradient */
+    color: #333;
+    padding: 0;
+    margin: 0;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #5b5f97; /* Pastel purple */
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #6a75ca; /* Light purple for links */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #ffb5a7; /* Light coral on hover */
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    gap: 40px;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: #4d4d4d;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.cta-buttons a {
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Try for Free Button (Filled) */
+.cta-buttons a.try-for-free {
+    background-color: #ffb5a7; /* Soft pastel coral */
+    color: white;
+}
+
+.cta-buttons a.try-for-free:hover {
+    background-color: #ff8c94; /* Slightly darker coral on hover */
+}
+
+/* Login Button (Outlined) */
+.cta-buttons a.login {
+    background-color: transparent;
+    color: #6a75ca; /* Light pastel purple */
+    border: 2px solid #6a75ca;
+    padding: 12px 24px; /* Adding padding to match the filled button */
+}
+
+.cta-buttons a.login:hover {
+    background-color: #6a75ca;
+    color: white;
+}
+
+/* Image Styling in Hero */
+.hero-image img {
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #fff;
+    color: #555;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    color: #555;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* Make header elements stack vertically on mobile */
+    header {
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the left on smaller screens */
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 20px;
+        margin-bottom: 10px; /* Add space below the logo */
+    }
+
+    .nav {
+        width: 100%; /* Make the nav take full width */
+        display: flex;
+        justify-content: space-between; /* Space between Login and Try for Free */
+    }
+
+    /* Adjust Hero Section for Mobile */
+    .hero {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Adjust image size for smaller screens */
+    .hero-image img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .cta-buttons a {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .nav a {
+        padding: 10px 0;
+    }
+}
