@@ -14,6 +14,8 @@
 ## 1. Introduction
 This provides a comprehensive overview of our Todo application, which is built using Angular for the frontend, Spring Boot for the backend, and deployed on AWS using CI/CD practices. 
 
+URL : https://todoapp.online/
+
 
 # Todo App
 
