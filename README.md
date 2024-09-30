@@ -17,25 +17,6 @@ This provides a comprehensive overview of our Todo application, which is built u
 URL : https://todoapp.online/
 
 
-# Todo App
-
-## Architecture Overview
-
-
-
-<details>
-<summary>Architecture Description</summary>
-
-Our Todo App uses a modern, cloud-based architecture:
-- Frontend: Angular application hosted on AWS S3
-- Backend: Spring Boot application running on AWS EC2
-- Database: PostgreSQL database on AWS RDS
-- CI/CD: Automated pipeline using AWS CodePipeline
-- All components are hosted within the AWS Cloud environment
-
-Users interact with the frontend, which communicates with the backend. The backend processes requests and interacts with the database. Our CI/CD pipeline ensures smooth and consistent deployments.
-</details>
-
 ## 2. Architecture Overview
 
 Our Todo app follows a microservices architecture:
