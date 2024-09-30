@@ -9,7 +9,6 @@ export class ErrorCodeService {
     "PASSWORD_MISMATCH": "The passwords you entered do not match. Please try again.",
     "INVALID_PASSWORD": "The passwords you entered is incorrect",
     "USER_NOT_EXISTS":"Username doesnt exists."
-    // Add more error codes and messages as needed
   };
 
   getErrorMessage(errorCode: string): string {

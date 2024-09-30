@@ -7,6 +7,7 @@ export const authInterceptor: HttpInterceptorFn = (req: HttpRequest<unknown>, ne
   const authService = inject(AuthService);
   
   const excludePattern = '/user/';
+  
   if (req.url.includes(excludePattern)) {
     return next(req);
   } else {

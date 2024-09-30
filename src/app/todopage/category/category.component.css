@@ -150,6 +150,17 @@
   font-style: italic;
 }
 
+.category-container.selected {
+  background-color: #cfeff9;
+  color: #2c3e50;
+  box-shadow: 0 4px 12px rgba(207, 239, 249, 0.6); 
+  border-left: 6px solid #7aadff;
+  transition: all 0.3s ease;
+}
+
+
+
+
 /* Mobile Styles */
 @media (max-width: 768px) {
   

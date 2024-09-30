@@ -24,12 +24,15 @@ export class CategoryComponent {
   onHover(index: number | null) {
     this.hoveredIndex = index;
   }
+
+
   categories: Category[] = [];
   newCategoryName = '';
   isAddingCategory = false;
   showIcons = false;
   editingIndex=-1;
   editedCategoryName='';
+  selectedCategory:Category|null=null;
 
 
 
@@ -108,6 +111,9 @@ export class CategoryComponent {
   }
 
   selectCategory(category: Category){
+    console.log(this.selectCategory);
+
+    this.selectedCategory=category;
     this.categoryService.updateSelectedCategory(category);
   }
 
