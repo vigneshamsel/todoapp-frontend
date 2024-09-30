@@ -8,11 +8,8 @@
 5. [Database](#database)
 6. [AWS Deployment](#aws-deployment)
 7. [CI/CD Pipeline](#cicd-pipeline)
-8. [Testing](#testing)
-9. [Security Considerations](#security-considerations)
-10. [Scalability and Performance](#scalability-and-performance)
-11. [Monitoring and Logging](#monitoring-and-logging)
-12. [Future Enhancements](#future-enhancements)
+8. [Security Considerations](#security-considerations)
+
 
 ## 1. Introduction
 This document provides a comprehensive overview of our Todo application, which is built using Angular for the frontend, Spring Boot for the backend, and deployed on AWS using CI/CD practices. 
@@ -22,7 +19,7 @@ This document provides a comprehensive overview of our Todo application, which i
 
 ## Architecture Overview
 
-![Todo App Architecture](src/assets/images/Logo.png)
+
 
 <details>
 <summary>Architecture Description</summary>
@@ -49,7 +46,7 @@ Our Todo app follows a microservices architecture:
 
 
 ## 3. Frontend: Angular
-- Components
+- Components:
   -homemarketsite
   -login
   -createaccount
@@ -67,94 +64,51 @@ Our Todo app follows a microservices architecture:
   - Authguard for authentication handlings
 
 
-
-- State management: [If used, e.g., NgRx]
-- Routing structure
-
-Key learning points:
-- Component architecture in Angular
-- Services and dependency injection
-- Angular forms (template-driven vs reactive)
-- HTTP client for API communication
-
 ## 4. Backend: Spring Boot
-- Spring Boot version: [Your version]
-- Key components:
-  - Controllers (e.g., TodoController)
-  - Services (e.g., TodoService)
-  - Repositories (e.g., TodoRepository)
-- API endpoints:
-  - GET /api/todos
-  - POST /api/todos
-  - PUT /api/todos/{id}
-  - DELETE /api/todos/{id}
+- Spring Boot version:
+  - Controllers (UserController,TaskController,TaskCategoryController)
+  - Hibernate (Pojo to query)
+  - pom.xml
 
-Key learning points:
-- RESTful API design
-- Spring Boot annotations
-- Dependency injection in Spring
-- Data persistence with Spring Data JPA
+
+- API endpoints: 
+  - POST /user/register
+  - POST /user/login
+  - GET /api/categories
+  - POST /api/categories
+  - PUT /api/categories/{id}
+  - DELETE /api/categories/{id}
+  - GET /api/tasks
+  - POST /api/tasks
+  - PUT /api/tasks/{id}
+  - DELETE /api/tasks/{id}
+
+  
 
 ## 5. Database
-- Type: [e.g., MySQL, PostgreSQL]
-- Schema design
-- ORM: Spring Data JPA
-- Migration strategy: [e.g., Flyway, Liquibase]
+- Type: [POSTGRESQL]
+- ![DB Design](src/assets/images/dbdesign.png)
+
+
 
 ## 6. AWS Deployment
 - Services used:
-  - EC2 for backend hosting
+  - EC2 for backend hosting (virtual maching)
   - S3 for static frontend hosting
   - RDS for database
   - Route 53 for DNS management
   - CloudFront for content delivery
-- Infrastructure as Code: [e.g., CloudFormation, Terraform]
 
-Key learning points:
-- AWS service configuration
-- Infrastructure as Code principles
-- Cloud security best practices
 
-## 7. CI/CD Pipeline
-- Tools used: [e.g., Jenkins, AWS CodePipeline]
+
+## 7. CI/CD Pipeline (Git Actions
 - Stages:
-  1. Source control integration
-  2. Build
-  3. Test
-  4. Deploy to staging
-  5. Manual approval
-  6. Deploy to production
+  1. Build
+  2. Deploy 
 
-Key learning points:
-- Automated build and deployment processes
-- Environment management (dev, staging, prod)
-- Continuous integration practices
 
-## 8. Testing
-- Frontend: Jasmine and Karma for unit tests
-- Backend: JUnit and Mockito for unit and integration tests
-- E2E Testing: [e.g., Protractor, Cypress]
-
-## 9. Security Considerations
-- Authentication: [e.g., JWT, OAuth]
-- HTTPS enforcement
+## 8. Security Considerations
+- Authentication:JWT Tokem
+- HTTPS 
 - CORS configuration
-- Input validation and sanitization
-- Secure coding practices
 
-## 10. Scalability and Performance
-- Load balancing with AWS ELB
-- Caching strategies
-- Database indexing and query optimization
-
-## 11. Monitoring and Logging
-- AWS CloudWatch for logs and metrics
-- Application performance monitoring: [e.g., New Relic, Datadog]
-- Alert configuration
-
-## 12. Future Enhancements
-- Real-time updates with WebSockets
-- Mobile app development
-- AI-powered todo suggestions
-
-This document serves as a starting point for understanding the Todo app's architecture and implementation. Each section can be expanded with code snippets, diagrams, and more detailed explanations as needed.
