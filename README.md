@@ -24,7 +24,7 @@ Our Todo app follows a microservices architecture:
 - Backend: Spring Boot
 - Database: PostgreSQL
 - Deployment: AWS (EC2, S3, RDS)
-- CI/CD: CodePipeline
+- CI/CD: GitHub Actions
 
 
 ## 3. Frontend: Angular
