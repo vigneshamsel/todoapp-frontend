@@ -1,4 +1,4 @@
-# Todo App Learning Document: Angular, Spring Boot, AWS, CI/CD
+# Todo App  Angular, Spring Boot, AWS, CI/CD
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -15,26 +15,59 @@
 12. [Future Enhancements](#future-enhancements)
 
 ## 1. Introduction
-This document provides a comprehensive overview of our Todo application, which is built using Angular for the frontend, Spring Boot for the backend, and deployed on AWS using CI/CD practices. It serves as a learning resource for developers looking to understand full-stack development, cloud deployment, and DevOps practices.
+This document provides a comprehensive overview of our Todo application, which is built using Angular for the frontend, Spring Boot for the backend, and deployed on AWS using CI/CD practices. 
 
+
+# Todo App
+
+## Architecture Overview
+
+![Todo App Architecture](.src/assets/images/Logo.png)
+
+<details>
+<summary>Architecture Description</summary>
+
+Our Todo App uses a modern, cloud-based architecture:
+- Frontend: Angular application hosted on AWS S3
+- Backend: Spring Boot application running on AWS EC2
+- Database: PostgreSQL database on AWS RDS
+- CI/CD: Automated pipeline using AWS CodePipeline
+- All components are hosted within the AWS Cloud environment
+
+Users interact with the frontend, which communicates with the backend. The backend processes requests and interacts with the database. Our CI/CD pipeline ensures smooth and consistent deployments.
+</details>
+
+[Rest of your README content...]
 ## 2. Architecture Overview
-Our Todo app follows a microservices architecture:
-- Frontend: Angular Single Page Application (SPA)
-- Backend: Spring Boot RESTful API
-- Database: [Your chosen database, e.g., MySQL, PostgreSQL]
-- Deployment: AWS (EC2, S3, RDS, etc.)
-- CI/CD: [Your chosen tools, e.g., Jenkins, AWS CodePipeline]
 
-[Include a high-level architecture diagram here]
+Our Todo app follows a microservices architecture:
+- Frontend: Angular 
+- Backend: Spring Boot
+- Database: PostgreSQL
+- Deployment: AWS (EC2, S3, RDS)
+- CI/CD: CodePipeline
+
 
 ## 3. Frontend: Angular
-- Angular version: [Your version]
-- Key components:
-  - TodoListComponent
-  - TodoItemComponent
-  - TodoFormComponent
+- Components
+  -homemarketsite
+  -login
+  -createaccount
+  -todohome (Parent component for category and task list)
+  -category
+  -task
+
+
 - Services:
-  - TodoService (for API communication)
+  - category,task (for API)
+  - category-color (for dynamic colors in categories)
+  - auth (for authentication APIs)
+  - error-code(error code and message provider)
+  - authInterceptor (for appending token in apis)
+  - Authguard for authentication handlings
+
+
+
 - State management: [If used, e.g., NgRx]
 - Routing structure
 
