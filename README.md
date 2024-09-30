@@ -22,7 +22,7 @@ This document provides a comprehensive overview of our Todo application, which i
 
 ## Architecture Overview
 
-![Todo App Architecture](.src/assets/images/Logo.png)
+![Todo App Architecture](src/assets/images/Logo.png)
 
 <details>
 <summary>Architecture Description</summary>
