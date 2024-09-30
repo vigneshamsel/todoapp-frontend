@@ -36,7 +36,6 @@ Our Todo App uses a modern, cloud-based architecture:
 Users interact with the frontend, which communicates with the backend. The backend processes requests and interacts with the database. Our CI/CD pipeline ensures smooth and consistent deployments.
 </details>
 
-[Rest of your README content...]
 ## 2. Architecture Overview
 
 Our Todo app follows a microservices architecture:
