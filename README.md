@@ -83,7 +83,7 @@ Our Todo app follows a microservices architecture:
 
 
 
-## 7. CI/CD Pipeline (Git Actions
+## 7. CI/CD Pipeline (Git Actions)
 - Stages:
   1. Build
   2. Deploy 
