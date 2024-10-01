@@ -75,7 +75,7 @@ Our Todo app follows a microservices architecture:
 
 ## 6. AWS Deployment
 - Services used:
-  - EC2 for backend hosting (virtual maching)
+  - EC2 for backend hosting (virtual machine)
   - S3 for static frontend hosting
   - RDS for database
   - Route 53 for DNS management
